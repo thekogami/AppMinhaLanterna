@@ -50,14 +50,17 @@ namespace AppMinhaLanterna
             catch (FeatureNotSupportedException fnsEx)
             {
                 // Handle not supported on device exception
+                //await DisplayAlert("Erro", fnsEx.Message, "OK");
             }
             catch (PermissionException pEx)
             {
                 // Handle permission exception
+                //await DisplayAlert("Erro", pEx.Message, "OK");
             }
             catch (Exception ex)
             {
                 // Unable to turn on/off flashlight
+                //await DisplayAlert("Erro", ex.Message, "OK");
             }
         }
     }
