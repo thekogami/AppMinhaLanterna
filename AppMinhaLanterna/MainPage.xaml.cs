@@ -23,14 +23,16 @@ namespace AppMinhaLanterna
             if(texto == "File: desligado")
             {
                 bt.Source = "ligado";
+                this.LigarCameraAsync(true);
             }
             else
             {
                 bt.Source = "desligado";
+                this.LigarCameraAsync(true);
             }
         }
 
-        private async void LigarCamera(Boolean ligar)
+        private async void LigarCameraAsync(Boolean ligar)
         {
             try
             {
