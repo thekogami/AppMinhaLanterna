@@ -19,13 +19,13 @@ namespace AppMinhaLanterna
         {
             ImageButton bt = (ImageButton)sender;
             String texto = bt.Source.ToString();
-            if(texto == "File:desligado")
+            if(texto == "File: desligado")
             {
-
+                bt.Source = "ligado";
             }
             else
             {
-
+                bt.Source = "desligado";
             }
         }
     }
