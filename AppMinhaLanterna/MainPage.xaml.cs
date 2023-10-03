@@ -14,5 +14,19 @@ namespace AppMinhaLanterna
         {
             InitializeComponent();
         }
+
+        private void btLigar_Clicked(object sender, EventArgs e)
+        {
+            ImageButton bt = (ImageButton)sender;
+            String texto = bt.Source.ToString();
+            if(texto == "File:desligado")
+            {
+
+            }
+            else
+            {
+
+            }
+        }
     }
 }
