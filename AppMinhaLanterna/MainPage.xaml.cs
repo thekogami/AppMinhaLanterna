@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace AppMinhaLanterna
@@ -26,6 +27,35 @@ namespace AppMinhaLanterna
             else
             {
                 bt.Source = "desligado";
+            }
+        }
+
+        private async void LigarCamera(Boolean ligar)
+        {
+            try
+            {
+                if (ligar == true)
+                {
+                    // Turn On
+                    await Flashlight.TurnOnAsync();
+                }
+                else
+                {
+                    // Turn Off
+                    await Flashlight.TurnOffAsync();
+                }               
+            }
+            catch (FeatureNotSupportedException fnsEx)
+            {
+                // Handle not supported on device exception
+            }
+            catch (PermissionException pEx)
+            {
+                // Handle permission exception
+            }
+            catch (Exception ex)
+            {
+                // Unable to turn on/off flashlight
             }
         }
     }
