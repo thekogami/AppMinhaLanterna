@@ -28,7 +28,7 @@ namespace AppMinhaLanterna
             else
             {
                 bt.Source = "desligado";
-                this.LigarCameraAsync(true);
+                this.LigarCameraAsync(false);
             }
         }
 
