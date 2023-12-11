@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using Android.App;
 
@@ -28,4 +28,4 @@ using Android.App;
 [assembly: UsesPermission(Android.Manifest.Permission.Internet)]
 [assembly: UsesPermission(Android.Manifest.Permission.WriteExternalStorage)]
 [assembly: UsesPermission(Android.Manifest.Permission.Flashlight)]
-[assembly: UsesPermission(Android.Manifest.Permission.Camera)]
+//[assembly: UsesPermission(Android.Manifest.Permission.Camera)]
