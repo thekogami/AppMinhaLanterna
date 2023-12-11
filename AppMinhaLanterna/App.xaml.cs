@@ -1,6 +1,5 @@
-﻿using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace AppMinhaLanterna
 {
@@ -9,20 +8,38 @@ namespace AppMinhaLanterna
         public App()
         {
             InitializeComponent();
-
             MainPage = new MainPage();
         }
 
         protected override void OnStart()
         {
+            base.OnStart();
+
+            var mainPage = MainPage as MainPage;
+            if (mainPage?.Ligado ?? false)
+            {
+                mainPage.SetLigadoImage("ligado.png");
+            }
         }
 
-        protected override void OnSleep()
+        protected override async void OnSleep()
         {
+            bool isLigado = (MainPage as MainPage)?.Ligado ?? false;
+
+            if (isLigado)
+            {
+                await Flashlight.TurnOffAsync();
+                (MainPage as MainPage)?.SetLigadoImage("desligado.jpg");
+            }
         }
 
-        protected override void OnResume()
+        protected override async void OnResume()
         {
+            if ((MainPage as MainPage)?.Ligado ?? false)
+            {
+                await Flashlight.TurnOnAsync();
+                (MainPage as MainPage)?.SetLigadoImage("ligado.png");
+            }
         }
     }
 }
