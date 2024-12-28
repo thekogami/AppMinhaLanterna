@@ -19,44 +19,46 @@ namespace AppMinhaLanterna
             Ligado = false;
         }
 
-        private void btLigar_Clicked(object sender, EventArgs e)
+        private async void btLigar_Clicked(object sender, EventArgs e)
         {
             ImageButton bt = (ImageButton)sender;
             String texto = bt.Source.ToString();
             if (texto == "File: desligado.jpg")
             {
-                bt.Source = "ligado.png";
-                this.LigarCameraAsync(true);
+                bt.Source = "ligado.jpg";
+                await LigarCameraAsync(true);
+                statusLabel.Text = "Desligue a lanterna.";
             }
             else
             {
                 bt.Source = "desligado.jpg";
-                this.LigarCameraAsync(false);
+                await LigarCameraAsync(false);
+                statusLabel.Text = "Ligue a lanterna.";
             }
 
             Ligado = !Ligado;
         }
 
-        private async void LigarCameraAsync(Boolean ligar)
+        private async System.Threading.Tasks.Task LigarCameraAsync(Boolean ligar)
         {
             try
             {
                 if (ligar)
-                    Flashlight.TurnOnAsync(); // Turn On await 
+                    await Flashlight.TurnOnAsync(); // Turn On
                 else
                     await Flashlight.TurnOffAsync(); // Turn Off
             }
             catch (FeatureNotSupportedException fnsEx)
             {
-                //await DisplayAlert("Erro", fnsEx.Message, "OK");
+                await DisplayAlert("Erro", fnsEx.Message, "OK");
             }
             catch (PermissionException pEx)
             {
-                //await DisplayAlert("Erro", pEx.Message, "OK");
+                await DisplayAlert("Erro", pEx.Message, "OK");
             }
             catch (Exception ex)
             {
-                //await DisplayAlert("Erro", ex.Message, "OK");
+                await DisplayAlert("Erro", ex.Message, "OK");
             }
         }
     }

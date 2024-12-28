@@ -6,11 +6,11 @@ using Android.App;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AppMinhaLanterna.Android")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Aplicativo de lanterna desenvolvido por Felipe")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Felipe Broglio.")]
 [assembly: AssemblyProduct("AppMinhaLanterna.Android")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCopyright("Copyright © Felipe Broglio 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
@@ -21,7 +21,7 @@ using Android.App;
 //      Minor Version 
 //      Build Number
 //      Revision
-[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.0.1")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
 // Add some common permissions, these can be removed if not needed

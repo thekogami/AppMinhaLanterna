@@ -4,13 +4,14 @@
              x:Class="AppMinhaLanterna.MainPage" BackgroundColor="White">
 
     <StackLayout>
-        <Label Text="Liga a laterna Jake." 
+        <Label x:Name="statusLabel"
+               Text="Lanterna desligada." 
                HorizontalOptions="Center"
                FontSize="Large"
                TextColor="Green"
                Margin="20"/>
         <ImageButton x:Name="btLigar"
-                     Source="desligado"
+                     Source="desligado.jpg"
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="FillAndExpand"
                      Margin="20"
