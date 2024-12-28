@@ -1,3 +1,1 @@
 # AppMinhaLanterna
-
-m
